@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Crypto - Gerenciador de Arquivos Criptografados</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">🔐</div>
+                    <div>
+                        <h1 class="title">File Crypto</h1>
+                        <p class="subtitle">Gerenciador de Arquivos Criptografados</p>
+                    </div>
+                </div>
+                <div class="header-info">
+                    <span class="status-badge">AES-256-GCM</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <div class="upload-container">
+                    <div class="upload-area" id="uploadArea">
+                        <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <h2>Arraste um arquivo aqui</h2>
+                        <p>ou clique para selecionar</p>
+                        <input type="file" id="fileInput" class="file-input" hidden>
+                    </div>
+                    <div class="upload-progress" id="uploadProgress" style="display: none;">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <p id="progressText">Enviando arquivo...</p>
+                    </div>
+                </div>
+                <p class="file-info" id="fileInfo"></p>
+            </section>
+
+            <!-- Tabs Navigation -->
+            <section class="tabs-section">
+                <div class="tabs-container">
+                    <button class="tab-btn active" data-category="all">
+                        <span class="tab-icon">📋</span>
+                        <span class="tab-label">Todos</span>
+                    </button>
+                    <button class="tab-btn" data-category="encrypted">
+                        <span class="tab-icon">🔒</span>
+                        <span class="tab-label">Criptografados</span>
+                    </button>
+                    <button class="tab-btn" data-category="audio">
+                        <span class="tab-icon">🎵</span>
+                        <span class="tab-label">Áudios</span>
+                    </button>
+                    <button class="tab-btn" data-category="image">
+                        <span class="tab-icon">🖼️</span>
+                        <span class="tab-label">Imagens</span>
+                    </button>
+                    <button class="tab-btn" data-category="json">
+                        <span class="tab-icon">{ }</span>
+                        <span class="tab-label">JSON</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Files Gallery -->
+            <section class="files-section">
+                <div class="files-header">
+                    <h3>Arquivos Gerenciados</h3>
+                    <span class="file-count" id="fileCount">0 arquivos</span>
+                </div>
+                
+                <div class="files-grid" id="filesGrid">
+                    <div class="empty-state">
+                        <div class="empty-icon">📁</div>
+                        <p>Nenhum arquivo encontrado</p>
+                        <small>Comece enviando um arquivo para criptografar</small>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Preview Modal -->
+            <div class="modal" id="previewModal" style="display: none;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 id="previewTitle">Preview</h3>
+                        <button class="modal-close" id="closePreviewBtn">✕</button>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <!-- Image Preview -->
+                        <div class="preview-container" id="imagePreview" style="display: none;">
+                            <img id="previewImage" alt="Preview" class="preview-image">
+                        </div>
+                        
+                        <!-- Audio Preview -->
+                        <div class="preview-container" id="audioPreview" style="display: none;">
+                            <audio id="previewAudio" controls style="width: 100%;"></audio>
+                        </div>
+                        
+                        <!-- JSON Preview -->
+                        <div class="preview-container" id="jsonPreview" style="display: none;">
+                            <pre id="previewJson" class="preview-json"></pre>
+                        </div>
+                        
+                        <!-- Text Preview -->
+                        <div class="preview-container" id="textPreview" style="display: none;">
+                            <pre id="previewText" class="preview-text"></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" id="downloadPreviewBtn">
+                            <span class="btn-icon">⬇️</span>
+                            <span class="btn-text">Baixar</span>
+                        </button>
+                        <button class="btn btn-primary" id="closePreviewBtnFooter">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>File Crypto © 2024 | Criptografia AES-256-GCM | Gerenciamento Seguro de Arquivos</p>
+        </footer>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
