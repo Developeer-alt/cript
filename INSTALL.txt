@@ -1,0 +1,128 @@
+╔════════════════════════════════════════════════════════════════╗
+║          🔐 FILE CRYPTO - GUIA DE INSTALAÇÃO RÁPIDA          ║
+║        Gerenciador de Arquivos Criptografados com AES-256     ║
+╚════════════════════════════════════════════════════════════════╝
+
+📋 PASSO 1: EXTRAIR O ARQUIVO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Extraia o arquivo FileCryptoApp.zip em um local de sua escolha:
+
+  unzip FileCryptoApp.zip
+  cd FileCryptoApp
+
+
+📦 PASSO 2: INSTALAR DEPENDÊNCIAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Instale as dependências Python necessárias:
+
+  pip install -r requirements.txt
+
+Ou com sudo (se necessário):
+
+  sudo pip3 install -r requirements.txt
+
+
+🚀 PASSO 3: INICIAR A APLICAÇÃO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Execute o comando para iniciar o servidor:
+
+  python app.py
+
+Você verá a mensagem:
+  ============================================================
+  🔐 File Crypto - Aplicação de Criptografia de Arquivos
+  ============================================================
+  📁 Pasta de uploads: /caminho/para/uploads
+  🔑 Criptografia: AES-256-GCM
+  🌐 Servidor iniciando em http://localhost:5000
+  ============================================================
+
+
+🌐 PASSO 4: ACESSAR A APLICAÇÃO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Abra seu navegador e acesse:
+
+  http://localhost:5000
+
+A aplicação estará pronta para uso!
+
+
+✨ FUNCIONALIDADES PRINCIPAIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✓ Upload com Drag-and-Drop
+✓ Criptografia AES-256-GCM
+✓ Extensões Personalizadas
+✓ Categorização Automática (Áudio, Imagem, JSON, Criptografado)
+✓ Visualizadores Integrados (Imagem, Áudio, JSON)
+✓ Download de Arquivos Descriptografados
+✓ Gerenciamento Completo (Upload, Preview, Download, Deletar)
+✓ Interface Moderna com Fonte Tecnológica
+✓ Responsivo (Desktop, Tablet, Mobile)
+
+
+🔐 SEGURANÇA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✓ Criptografia AES-256-GCM (Padrão Militar)
+✓ PBKDF2 Key Derivation
+✓ IV Aleatório para Cada Arquivo
+✓ Autenticação de Tag (Validação de Integridade)
+✓ Armazenamento Seguro no Servidor
+
+
+📁 ESTRUTURA DO PROJETO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FileCryptoApp/
+├── app.py                 ← Backend Flask (execute este arquivo!)
+├── requirements.txt       ← Dependências Python
+├── README.md             ← Documentação completa
+├── INSTALL.txt           ← Este arquivo
+├── uploads/              ← Pasta para arquivos criptografados
+├── static/
+│   ├── css/
+│   │   └── style.css     ← Estilos CSS moderno
+│   └── js/
+│       └── script.js     ← Lógica JavaScript
+└── templates/
+    └── index.html        ← Página HTML principal
+
+
+⚙️ REQUISITOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✓ Python 3.7 ou superior
+✓ pip (gerenciador de pacotes Python)
+✓ Navegador moderno (Chrome, Firefox, Safari, Edge)
+✓ Conexão com Internet (para carregar fontes do Google)
+
+
+🐛 TROUBLESHOOTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❌ Erro: "Porta 5000 já em uso"
+✓ Solução: A porta 5000 está sendo usada por outro programa.
+  Você pode mudar a porta no arquivo app.py, na última linha:
+  app.run(debug=False, host='0.0.0.0', port=8000)
+
+❌ Erro: "ModuleNotFoundError: No module named 'flask'"
+✓ Solução: Instale as dependências:
+  pip install -r requirements.txt
+
+❌ Erro: "Permission denied" na pasta uploads
+✓ Solução: Crie a pasta manualmente:
+  mkdir uploads
+  chmod 755 uploads
+
+❌ A aplicação não carrega no navegador
+✓ Solução: Verifique se o servidor está rodando e acesse:
+  http://localhost:5000
+
+
+📞 SUPORTE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Para mais informações, consulte o arquivo README.md
+
+
+🎉 PRONTO!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Sua aplicação File Crypto está pronta para usar!
+
+Aproveite o gerenciador de arquivos criptografados! 🔐
